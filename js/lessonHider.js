@@ -5,7 +5,8 @@ angular.module('directivePractice')
       restrict: 'E',
       templateUrl: './views/lessonHider.html',
       scope: {
-        lesson : '='
+        lesson : '=',
+        dayAlert: '&'
       },
       
       controller: function($scope, lessonService) {
@@ -18,9 +19,11 @@ angular.module('directivePractice')
           
             for (var i = 0; i < scope.schedule.length; i++) {
               if(scope.lesson === scope.schedule[i].lesson) {
+                scope.lessonDay = scope.schedule[i].weekday;
                 element.css('text-decoration', 'line-through'); //do i need single mustache brackets between my parenthesis?
                 return;
               }
+              
             }
         });
       }
