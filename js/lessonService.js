@@ -1,7 +1,8 @@
 angular.module('directivePractice')
-  .service('placeholderName', function() {
+  .service('lessonService', function($http) {
     
-    // this.getSchedule = return $http.get('schedule.json');
-
+    this.getSchedule = function () {
+      return $http.get('schedule.json');
+    }
     
   });
